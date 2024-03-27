@@ -64,3 +64,24 @@ XOR の定式化における $c$ を $1 - c$ に置き換えれば良い.
 - $(1 - a) + b \leq 1 + (1 - c)$
 
 あるいは XOR で定式化した $c$ に対して $1 - c$ を用いる. 
+
+## 実行結果
+
+Google OR-Tools の CP-SAT ソルバーで目的関数を設定せずに実行可能解を全て求めるオプションをオンにして実行. 
+
+```shell
+$ dotnet run
+Solution #1: time = 0.00092 s
+  A = 0, B = 0
+  (A)AND(B) = 0  (A)OR(B) = 0  (A)NAND(B) = 1  (A)NOR(B) = 1  (A)XOR(B) = 0  (A)XNOR(B) = 1
+Solution #2: time = 0.01305 s
+  A = 0, B = 1
+  (A)AND(B) = 0  (A)OR(B) = 1  (A)NAND(B) = 1  (A)NOR(B) = 0  (A)XOR(B) = 1  (A)XNOR(B) = 0
+Solution #3: time = 0.01311 s
+  A = 1, B = 1
+  (A)AND(B) = 1  (A)OR(B) = 1  (A)NAND(B) = 0  (A)NOR(B) = 0  (A)XOR(B) = 0  (A)XNOR(B) = 1
+Solution #4: time = 0.01313 s
+  A = 1, B = 0
+  (A)AND(B) = 0  (A)OR(B) = 1  (A)NAND(B) = 1  (A)NOR(B) = 0  (A)XOR(B) = 1  (A)XNOR(B) = 0
+Number of solutions found: 4
+```
